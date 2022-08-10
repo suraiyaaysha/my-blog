@@ -25,3 +25,10 @@ Route::post('/blog/create/post',[\App\Http\Controllers\BlogPostController::class
 Route::get('/blog/{blogPost}/edit',[\App\Http\Controllers\BlogPostController::class, 'edit']); //shows edit post form
 Route::put('/blog/{blogPost}/edit',[\App\Http\Controllers\BlogPostController::class, 'update']); //commits edited post to the databse
 Route::delete('/blog/{blogPost}',[\App\Http\Controllers\BlogPostController::class, 'destroy']); //delets post from the databse
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

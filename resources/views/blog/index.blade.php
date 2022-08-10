@@ -10,7 +10,18 @@
                     </div>
                     <div class="col-4">
                         <p>Create new Post</p>
-                        <a href="/blog/create/post" class="btn btn-primary btn-sm">Add Post</a>
+                        {{-- <a href="/blog/create/post" class="btn btn-primary btn-sm">Add Post</a> --}}
+
+
+                        {{-- // suraiya --}}
+                        @if (Auth::check())
+                            <a href="/blog/create/post" class="btn btn-primary btn-sm">Add Post</a>
+                        @else
+                            <a href="/login" class="btn btn-primary btn-sm">Add Post</a>
+                        @endif
+                        {{-- // suraiya --}}
+
+
                     </div>
                 </div>                
                 @forelse($posts as $post)

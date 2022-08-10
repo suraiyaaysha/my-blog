@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogPostController extends Controller
 {
@@ -32,6 +33,16 @@ class BlogPostController extends Controller
     {
         //show form to create a blog post
         return view('blog.create');
+
+        // suraiya
+        // if (Auth::check()) {
+        //     return view('blog.create');
+        //     // The user is logged in...
+        // }
+        // else {
+        //     echo "Login First please!";
+        // }
+        // suraiya
     }
 
     /**
@@ -46,7 +57,8 @@ class BlogPostController extends Controller
         $newPost = BlogPost::create([
             'title'=> $request->title,
             'body'=> $request->body,
-            'user_id'=> 1
+            // 'user_id'=> 1,
+            'user_id'=> Auth::id(),
         ]);
 
         return redirect('blog/' . $newPost->id);
