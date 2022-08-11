@@ -87,6 +87,9 @@ class BlogPostController extends Controller
      */
     public function edit(BlogPost $blogPost)
     {
+        if(auth()->user()->id!=$blogPost->user_id){
+            return redirect()->back();
+        }
         //show form to edit the post
         return view('blog.edit', [
             'post' => $blogPost,
