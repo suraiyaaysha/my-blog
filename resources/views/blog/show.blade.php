@@ -23,7 +23,7 @@
                     {{-- <button class="btn btn-danger">Delete Post</button> --}}
 
                     {{-- // suraiya --}}
-                    @if (Auth::check())
+                    @if (Auth::check() && auth()->user()->id == $post->user_id)
                         <button class="btn btn-danger">Delete Post</button>
                     @endif
                     {{-- // suraiya --}}
