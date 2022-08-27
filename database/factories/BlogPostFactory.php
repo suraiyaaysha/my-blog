@@ -20,6 +20,7 @@ class BlogPostFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'body'=> $this->faker->paragraph(30),
+            'photo'=> $this->faker->photo('public/storage/images', null, false),
             'user_id'=>User::factory()
         ];
     }

@@ -28,9 +28,9 @@
                     <ul>
                         <li>
                             <a href="./blog/{{ $post->id }}">{{ ucfirst($post->title) }}</a>
-                             <div class="photo">
-                                <img src="{{ asset ($post->photo ) }}" alt="post photo here">
-                            </div>
+                                <img src="{{ asset($post->photo) }}" alt="post photo here" width="200" height="100">
+                                  {{-- <img src= "{{Storage::get('public/images/', $post->photo) }}" alt="Card image cap"> --}}
+
                         </li>
                     </ul>
                 @empty
