@@ -18,8 +18,11 @@ return new class extends Migration
 
             $table->text('title');
             $table->text('body');
+            // $table->string('photo', 300);
+            // $table->string('photo')-> null;
+             $table->string('photo', 300)->nullable();
+             
             $table->text('user_id');
-            
             $table->timestamps();
         });
     }

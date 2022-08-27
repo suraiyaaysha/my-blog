@@ -12,7 +12,7 @@
 
                     <hr>
 
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="control-group col-12">
@@ -24,6 +24,12 @@
                                 <label for="body">Post Body</label>
                                 <textarea id="body" class="form-control" name="body" placeholder="Enter Post Body"
                                           rows="" required></textarea>
+                            </div>
+                            
+                            <div class="control-group col-12">
+                                <label for="photo">Photo</label>
+                                <input type="file" id="photo" class="form-control" name="photo"
+                                       placeholder="photo">
                             </div>
                         </div>
                         <div class="row mt-2">

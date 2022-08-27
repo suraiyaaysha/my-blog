@@ -57,11 +57,14 @@ class BlogPostController extends Controller
         $newPost = BlogPost::create([
             'title'=> $request->title,
             'body'=> $request->body,
+            $fileName = time().$request->file('photo')->getClientOriginalName(),
+            $path = $request->file('photo')->storeAs('images', $fileName, 'public'),
+            $requestData["photo"] = '/storage/'.$path,
             // 'user_id'=> 1,
             'user_id'=> Auth::id(),
         ]);
 
-        return redirect('blog/' . $newPost->id);
+        return redirect('blog/' . $newPost->id)->with('flash_message', "Post created!");
     }
 
     /**

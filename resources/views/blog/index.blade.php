@@ -26,7 +26,12 @@
                 </div>                
                 @forelse($posts as $post)
                     <ul>
-                        <li><a href="./blog/{{ $post->id }}">{{ ucfirst($post->title) }}</a></li>
+                        <li>
+                            <a href="./blog/{{ $post->id }}">{{ ucfirst($post->title) }}</a>
+                             <div class="photo">
+                                <img src="{{ asset ($post->photo ) }}" alt="post photo here">
+                            </div>
+                        </li>
                     </ul>
                 @empty
                     <p class="text-warning">No blog Posts available</p>
